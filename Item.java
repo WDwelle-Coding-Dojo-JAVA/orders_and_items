@@ -8,18 +8,18 @@ public class Item{
     }
 //---Setters and Getters
     public void setName(String newName){
-        name = newName;
+        this.name = newName;
     }
 
     public void setPrice(double newPrice){
-        price = newPrice;
+        this.price = newPrice;
     }
 
     public String getName(){
-        return name;
+        return this.name;
     }
 
     public double getPrice(){
-        return price;
+        return this.price;
     }
 }

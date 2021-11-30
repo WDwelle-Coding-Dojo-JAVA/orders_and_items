@@ -15,24 +15,34 @@ public class Order{
     //---Constuctors---
     public Order(){
         this.name = "Guest";
-        this.ArrayList<Item> = new ArrayList();
+        this.ready = false;
     }
 
     public Order(String name){
         this.name = name;
-        this.ArrayList<Item> = new ArrayList();
+        this.ready = false;
     }
 
 
 //---Methods---
     public void addItem(Item){
-
+        this.items.add(item);
     }
 
-    public void getStatusMessage(){
-
+    public String getStatusMessage(){
+        if(this.ready == true) {
+            return "Your order is ready.";
+        } else {
+            return  "Thank you for waiting. Your order will be ready soon.";
+        }
     }
-    public void getOrderTotal(){
+    public double getOrderTotal(){
+        double total = 0.0;
+        for(Item i: this.items) {
+            total += i.getPrice();
+        }
+        return total;
+    }
 
     }
 
