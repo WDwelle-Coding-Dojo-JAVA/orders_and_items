@@ -25,7 +25,7 @@ public class Order{
 
 
 //---Methods---
-    public void addItem(Item){
+    public void addItem(Item item){
         this.items.add(item);
     }
 
@@ -46,10 +46,12 @@ public class Order{
 
     }
 
-    public void display(Order){
-        System.out.println(this.name);
-        System.out.println(this.items.price);
-        System.out.println(getOrderTotal);
+    public void display(){
+        System.out.printf("Customer Name: %s", this.name);
+        for(Item i: this.items) {
+            System.out.println(i.getName() + " - $" + i.getPrice());
+        }
+        System.out.println("Total: $" + this.getOrderTotal());
     }
     //---Setters and Getters---
     public void setGuestName(String guestName){
